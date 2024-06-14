@@ -1,0 +1,16 @@
+// auction.nada
+
+// First-Price Auction
+function firstPriceAuction(bids: map[address]uint) -> address {
+    highestBid := 0
+    highestBidder := address(0)
+    
+    for bidder, bid in bids {
+        if bid > highestBid {
+            highestBid = bid
+            highestBidder = bidder
+        }
+    }
+    
+    return highestBidder
+}
